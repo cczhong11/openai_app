@@ -27,7 +27,7 @@
   padding-top: 60px;
 }
 .main .icon {
-  width: 50px;
+  width: 150px;
 }
 .main h3 {
   font-size: 32px;
@@ -36,17 +36,22 @@
   color: #202123;
   margin: 16px 0 40px;
 }
+.compare {
+  display: flex;
+  flex-direction: row;
+}
 .main form {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 40%;
 }
-.main input[type="text"] {
+.main textarea {
   padding: 12px 16px;
   border: 1px solid #10a37f;
   border-radius: 4px;
   margin-bottom: 24px;
   outline-color: #10a37f;
+  font-size: 18px;
 }
 .main ::placeholder {
   color: #8e8ea0;
@@ -67,5 +72,7 @@
   color: #333333;
   text-align: center;
   margin-top: 20px;
-  max-width: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
+  max-width: 50%;
 }

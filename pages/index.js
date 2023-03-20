@@ -43,20 +43,22 @@ export default function Home() {
       <main className={styles.main}>
         <img src="/teacher.jpg" className={styles.icon} />
         <h3>Improve english</h3>
-        <form onSubmit={onSubmit}>
-          <textarea
-            type="text"
-            name="english"
-            placeholder="Enter an English paragraph"
-            value={english}
-            rows={10}
-            cols={40}
-            onChange={(e) => setEnglish(e.target.value)}
-          />
-          <input type="submit" value="Generate improvement" />
-        </form>
+        <div className={styles.compare}>
+          <form onSubmit={onSubmit}>
+            <textarea
+              type="text"
+              name="english"
+              placeholder="Enter an English paragraph"
+              value={english}
+              rows={10}
+              cols={40}
+              onChange={(e) => setEnglish(e.target.value)}
+            />
+            <input type="submit" value="Generate improvement" />
+          </form>
 
-        <div className={styles.result}>{result}</div>
+          <div className={styles.result}>{result}</div>
+        </div>
       </main>
     </div>
   );

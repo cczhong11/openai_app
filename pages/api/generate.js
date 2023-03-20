@@ -33,7 +33,7 @@ export default async function (req, res) {
         {
           role: "system",
           content:
-            "you're an a AI assistant that help me improve my english writting skills. Don't see Here's an improved version of the paragraph:  every time",
+            "you're an a AI assistant that help me improve my english writting skills.",
         },
         { role: "user", content: generatePrompt(english) },
       ],
@@ -43,9 +43,13 @@ export default async function (req, res) {
       frequency_penalty: 0.5,
       presence_penalty: 0.2,
     });
-    res
-      .status(200)
-      .json({ result: completion.data.choices[0].message.content });
+    const result = completion.data.choices[0].message.content.replace(
+      "Here's an improved version of the paragraph:",
+      ""
+    );
+    res.status(200).json({
+      result,
+    });
   } catch (error) {
     // Consider adjusting the error handling logic for your use case
     if (error.response) {
